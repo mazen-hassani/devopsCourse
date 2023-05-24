@@ -1,10 +1,15 @@
 pipeline {
     agent any
-
+    
+    tools {
+        go 'go-1.20.4'
+    }
+    
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                sh 'go version'
+                sh 'go build main.go'
             }
         }
     }
