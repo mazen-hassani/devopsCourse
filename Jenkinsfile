@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh 'go version'
                 sh 'go build main.go'
+                archiveArtifacts artifacts: 'main', followSymlinks: false
             }
         }
     }
